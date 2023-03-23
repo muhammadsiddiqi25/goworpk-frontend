@@ -50,7 +50,6 @@ function App() {
   
  }
   useEffect(() => {
-    console.log('app use effect')
    const accessToken = localStorage.getItem('accessToken')
    const refreshToken = localStorage.getItem('refreshToken')
    if(accessToken){
@@ -63,7 +62,6 @@ function App() {
       console.table({'current Time':current_time/1000,'expiry':refresh_expiry,' Refresh remaining':current_time/1000-refresh_expiry})
       if(current_time/1000-refresh_expiry < -600){
         if(current_time/1000-access_expiry > -50){
-          console.log('expired')
           dispatch(getTokens({refreshToken:localStorage.getItem('refreshToken')}))
         }
       }

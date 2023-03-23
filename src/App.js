@@ -58,8 +58,6 @@ function App() {
       const current_time = Date.parse(new Date())
       const access_remaining_time = diff_minutes(access_expiry,current_time/1000)  
       const refresh_remaining_time = diff_minutes(refresh_expiry,current_time/1000) 
-      console.table({'current Time':current_time/1000,'expiry':access_expiry,'remaining':current_time/1000-access_expiry})
-      console.table({'current Time':current_time/1000,'expiry':refresh_expiry,' Refresh remaining':current_time/1000-refresh_expiry})
       if(current_time/1000-refresh_expiry < -600){
         if(current_time/1000-access_expiry > -50){
           dispatch(getTokens({refreshToken:localStorage.getItem('refreshToken')}))

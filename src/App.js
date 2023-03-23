@@ -98,7 +98,7 @@ function App() {
                 <Route exact path='/candidate/experience-info' element={<Experience />} />
                 <Route exact path='/candidate/skills-info' element={<CandidateSkills />} />
                 <Route exact path='/candidate/about' element={<CandidateAbout />} />
-                <Route exact path='/candidate/cv-builder' element={<NothingShow />} />
+                <Route exact path='/candidate/cv-builder' element={<Cv_Builder />} />
               </Route>
               <Route path='/' element={<EmployerRoutes />}>
                 <Route path='/employer/verification' element={<Verification />} />

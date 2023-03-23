@@ -31,7 +31,7 @@ import Experience from './containers/Candidate/Experience';
 import CandidateSkills from './containers/Candidate/CandidateSkills';
 import CandidateAbout from './containers/Candidate/CandidateAbout';
 import CadidateDashboard from './containers/Candidate/CadidateDashboard';
-
+import Chat from './components/ChatBox/Chatbox';
 
 import jwtDecode from 'jwt-decode';
 import { useDispatch } from 'react-redux';
@@ -97,6 +97,8 @@ function App() {
                 <Route exact path='/candidate/skills-info' element={<CandidateSkills />} />
                 <Route exact path='/candidate/about' element={<CandidateAbout />} />
                 <Route exact path='/candidate/cv-builder' element={<Cv_Builder />} />
+                <Route exact path='/candidate/cv-builder' element={<Chat />} />
+
               </Route>
               <Route path='/' element={<EmployerRoutes />}>
                 <Route path='/employer/verification' element={<Verification />} />

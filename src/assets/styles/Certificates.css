@@ -1,0 +1,50 @@
+
+.main {
+    background: #F9F9F9;
+    border-radius: 22px;
+    margin: 50px 50px;
+    display: flex;
+    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 50px;
+}
+.main-item-2{
+    padding-left: 10px;
+}
+.main-item-2 h1{
+    margin-bottom: 10px;
+}
+#instructor{
+    padding-top: 50px;
+}
+.main-item-3{
+    align-items: center;
+}
+#price{
+    font-size: 90px;
+    font-weight: 600;
+    line-height: 113px;
+}
+@media only screen and (max-width: 1000px){
+    img{
+        /* padding: px; */
+        /* width:100%;   */
+    }
+    .main{
+        grid-template-columns: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+@media only screen and (max-width:600px) {
+    .main{
+        padding:10px;
+        margin:20px;
+        border-radius: 5px;
+    }
+}

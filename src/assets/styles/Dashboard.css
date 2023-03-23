@@ -1,0 +1,26 @@
+.dashboard-div{
+    margin:60px 100px;
+}
+
+.dashoboard-welcome{
+    text-align: center;
+    font-weight: 700;
+    font-size: 60px;
+}
+.box {
+    text-align: center;
+}
+.dashboardHeading{
+    font-size: 154px;
+    color: rgb(5,247,85);
+    font-weight: 700;
+}
+
+
+ 
+
+@media only screen and (max-width:500px){
+    .dashboard-div{
+        margin:60px 20px;
+    }
+}

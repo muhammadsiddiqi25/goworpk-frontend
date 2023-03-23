@@ -1,0 +1,254 @@
+
+.back-circle{
+    width:750px;
+    height:750px;
+    border-radius: 55%;
+    /* opacity:0.4; */
+    position: absolute;
+}
+.red-back-circle{
+    background: rgba(247, 157, 157, 0.66);
+    top:-80px;
+    right:-190px;
+    z-index: -8;
+}
+.blue-back-circle{
+    background: rgba(157, 225, 247, 0.54);
+    top:-120px;
+    right:-170px;
+    z-index:-9
+}
+
+.home-back{
+    width:750px;
+    height:750px;
+    border-radius: 50%;
+    position: absolute;
+    background-image: url('../images/hback.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    top:-100px;
+    right:-200px;
+    z-index: -8;
+}
+
+.home-content{
+    width:60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 80vh;
+    padding:0px 70px;
+}
+
+
+.home-content h1{
+    font-family: 'Inter';
+    font-size: 70px;
+    font-weight: 700;
+}
+
+.home-content h1 span{
+    font-family: 'Inter';
+}
+
+.home-content p{
+    margin:20px auto
+}
+
+.join{
+    display: flex;
+    align-items: center;
+    margin: 20px auto 10px auto;
+}
+
+.join h4{
+    color: gray;
+}
+
+.lines{
+    background-color: grey;
+    width:60px;
+    height: 2px;
+    margin:0px 10px
+}
+
+.home-buttons{
+    margin:30px auto;
+}
+
+.employer-points-div{
+    /* background-color: #F5F5F5; */
+    background-color: #ffffff;
+    width:100vw;
+    margin:30px auto 0px auto;
+    padding:70px 50px;
+}
+
+.employer-points{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.employer-points-card{
+    width:400px;
+    height: 240px;
+    padding:40px;
+    /* background-color: white; */
+    background-color: #F5F5F5;
+    text-align: center;
+    align-items: start;
+    border-radius: 10px;
+}
+
+.candidate-points-picture{
+    border-radius: 10px;
+    width:700px;
+    /* margin:40px;  */
+}
+
+.cand-points-main-div{
+    display: flex;
+    padding:60px;
+    margin:20px auto;
+}
+.cand-points-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* padding:0px 60px; */
+    margin:0px 50px;
+}
+.cand-points{
+    display: flex;
+    align-items: center;
+    padding:15px;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    background-color: white;
+}
+.cand-points:hover{
+    background-color: rgba(0, 0, 0, 0.795);
+    color:white;
+    transition:background-color 0.5s ease-in-out;
+}
+
+.cand-points p{
+    font-size: 18px;
+    line-height: 1.5;
+    
+}
+
+
+.contact-form-div{
+    display: flex;
+    gap:80px;
+    margin:30px 200px;
+}
+
+
+.contact-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:30px;
+    width:100%;
+}
+
+.cand-points-brief{
+    text-align: center;
+    margin:20px 250px;
+    padding:10px;  
+    font-family: 'Inter';
+
+}
+
+@media only screen and (max-width:1300px){
+    .back-circle, .home-back{
+        display: none;
+    }
+    .home-content{
+        width:90%;
+    }
+    .candidate-points-picture{
+        display:none;
+    }
+    .cand-points-main-div{
+        margin:10px;
+        padding:20px;
+    }
+    .cand-points-div{
+        margin:10px 50px;
+    }
+    .cand-points{
+        margin:20px;
+    }
+    .employer-points-card{
+        margin-top:40px;
+    }
+}
+
+@media only screen and (max-width:1000px){
+    .home-content{
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;  
+    }
+    .candidate-points-picture{
+        display: none;
+    }
+    .contact-form-div{
+        margin:auto 50px;
+    }
+    .cand-points-brief{
+        margin:40px 50px;
+    }
+}
+
+@media only screen and (max-width:720px){
+    .home-content{
+        padding:0px;
+    }
+    .home-content h1{
+        font-size: 40px;
+        margin: 10px;
+    }
+    .home-buttons{
+        padding:5px 10px;
+        font-size: 12px;
+    }
+    .contact-form-div{
+        flex-direction: column;
+        gap:10px;
+    }
+}
+
+@media only screen and (max-width:560px){
+    .home-content h1{
+        font-size: 40px;
+        padding: 0px;
+    }
+    .cand-points-div{
+        margin:10px;
+    }
+    .cand-points{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin:30px 5px;
+    }
+    .employer-points-card{
+        width:auto;
+        height:auto;
+    }
+}

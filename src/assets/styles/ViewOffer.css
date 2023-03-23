@@ -1,0 +1,90 @@
+ .viewOffer-main{
+    background: #F9F9F9;
+    border-radius: 22px;
+    margin: 50px 50px;
+    display: flex;
+    flex-wrap: wrap;    
+    padding: 50px;
+    width: 90%;
+    
+ }
+ .profileImg{
+    width: 189px;
+    height: 185px;
+
+}
+.viewOffer-box2-item1 h3{
+   font-size: 32px;
+   font-weight: 400;
+   font-style: normal;
+   line-height: 37px;
+}
+
+.viewOffer-box2-icons{
+   display: flex;
+   flex-wrap: wrap;
+   grid-template-columns: auto auto auto auto;
+   grid-gap: 10px;
+}
+.viewOffer-box2{
+   margin-left:  30.876px;
+}
+.viewOffer-box2-item1{
+   margin-bottom: 20px;
+}
+.loc2{
+   margin-top: 20px;
+}
+.loc3{
+   margin-top: 20px
+}
+.same-style{
+   margin-left: 50px;
+}
+
+@media only screen and(max-width= 1200px){
+
+   .profileImg{
+      width: 100%;
+
+  }
+
+}
+
+
+.viewOffer-main-1{
+   background: #F9F9F9;
+   border-radius: 22px;
+   margin: 50px 50px;
+   display: flex;
+   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+   grid-gap: 10px;
+   padding: 20px;
+   width: 90%;
+}
+.viewOffer-main-1-JD h4{
+   font-size: 32px;
+   font-weight: 400;
+   line-height: 37px;
+   font-style: normal;
+}
+.viewOffer-main-1-JE p{
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 17px;
+   font-style: normal;
+   padding-left: 13px;
+   padding-top: 6px;
+}
+.viewOffer-main-buttons{
+   margin: 10px 300px;
+   display: flex;
+   flex-wrap: wrap;
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+ 
+   
+   width: 90%;
+}

@@ -50,6 +50,7 @@ function App() {
   
  }
   useEffect(() => {
+    console.log("By Muhammad")
    const accessToken = localStorage.getItem('accessToken')
    const refreshToken = localStorage.getItem('refreshToken')
    if(accessToken){

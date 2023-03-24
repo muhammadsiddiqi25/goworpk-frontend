@@ -1,7 +1,17 @@
 import {
-    CHANGE_THEME, LOADING_FALSE, LOADING_TRUE
+    CERTIFICATE_DATA_REQUEST,
+     CV_BUILDER_REQUEST, VIEW_OFFER_REQUEST
 } from './types'
 
-export const change_theme = () =>{
-    return {type: CHANGE_THEME}
+
+export const getCertificationData=()=>{
+    return {type: CERTIFICATE_DATA_REQUEST}
+}
+
+export const getCvBuilderData=()=>{
+    return {type: CV_BUILDER_REQUEST}
+}
+
+export const getViewOfferData=()=>{
+    return {type: VIEW_OFFER_REQUEST}
 }

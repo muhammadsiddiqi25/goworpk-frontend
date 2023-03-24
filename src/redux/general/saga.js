@@ -1,5 +1,4 @@
-import { latest } from "immer/dist/internal";
-import { put, takeLatest } from "redux-saga/effects";
+import { takeLatest, call,put } from "redux-saga/effects";
 import { send_candidate_certification_data, send_candidate_cv_builder_data, send_candidate_view_offer_data } from "../../api/api";
 import { CERTIFICATE_DATA_FAILED, CERTIFICATE_DATA_REQUEST, CERTIFICATE_DATA_SUCCESS, CV_BUILDER_FAILED, CV_BUILDER_REQUEST, CV_BUILDER_SUCCESS, VIEW_OFFER_FAILED, VIEW_OFFER_REQUEST, VIEW_OFFER_SUCCESS } from "./types";
 

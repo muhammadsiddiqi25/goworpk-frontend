@@ -2,9 +2,9 @@ import React from 'react';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import Consversations from '../../components/Conversations/Conversations';
-import './chat.css';
+// import './chat.css';
 import Message from '../../components/Message/message';
-import ProfileTextField from '../../components/ProfileTextField'
+import ProfileTextField from '../custom-mui-comp/ProfileTextField';
 const Chat = ()=>{
     return(
         <>

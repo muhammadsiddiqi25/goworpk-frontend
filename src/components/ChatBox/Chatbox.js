@@ -7,13 +7,17 @@ import Message from '../../components/Message/message';
 import axios from 'axios';
 //import ProfileTextField from '../../components/ProfileTextField'
 const Chat = ()=>{
-    const [conversations, setConvesations] = useState([]);
+    const [conversations, setConversations] = useState([]);
+    const [currentChat, setCurrentChat] = useState(null);
+    const [messages, setMessages] = useState(null);
+
+
     /*useEffect(()=>{
         const getConversation = async ()=>{
             try {
                 //const res = await axios.get('/conversations'+user._id);
                 console.log(res);
-                setConvesations(res.data);
+                setConversations(res.data);
             } catch (error) {
                 console.log(error) ;
             }
@@ -22,6 +26,19 @@ const Chat = ()=>{
     }, //[user._id]);
     */
 
+    useEffect(()=>{
+        const getMessages = async ()=>{
+            try {
+                const res = await axios.get('/messages/'+currentChat._id);
+                setMessages(res.data);
+            } catch (error) {
+                console.log(error);
+            }
+        }
+        getMessages();
+    }, [currentChat]);
+    console.log(messages);
+    const user = 'kashif';
     return(
         <>
         <div className='messenger'>
@@ -31,14 +48,20 @@ const Chat = ()=>{
                   sx={{
                       m: 1, width: '40ch' ,
                   }} />
-            <Consversations />
-            <Consversations />
-            <Consversations />
-            <Consversations />
+
+            {
+            conversations.map(conv =>{
+                <div onClick={()=> setCurrentChat(conv)}>
+                    <Consversations conversation={conv} currentUser={user} />
+                </div>
+            })
+            }
             </div>
            </div>
            <div className='chatBox'>
            <div className='chatBoxWrapper'>
+            { currentChat ? (
+                <>
                 <div className='chatBoxTop'>
                     <Message />
                     <Message ownMsg={true}/>
@@ -53,8 +76,14 @@ const Chat = ()=>{
                 <div className='chatBoxBottom'>
                   <textarea className='chatMessageInput' />
                   <Button variant='contained'>Send</Button>
-
+                </div> 
+                </>) : (
+                 <div className='noConverText'>
+                    <h1>Select a Message.</h1>
+                    <p>Choose from your existing conversations, start a new one, or just keep swimming.</p>
                 </div>
+                )
+                }
             </div>
            </div>
         </div>

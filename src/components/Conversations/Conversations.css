@@ -20,3 +20,13 @@
 .conversationName{
     font-weight: 700;
 }
+.noConverText{
+    position: absolute;
+    top: 40%;
+    text-align: center;
+}
+.noConverText h1{
+    font-size: 4rem;
+    color: rgb(23, 252, 99);
+    font-weight: 700;
+}

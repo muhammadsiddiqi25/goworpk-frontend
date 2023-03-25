@@ -2,9 +2,9 @@ import React from 'react';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import Consversations from '../../components/Conversations/Conversations';
-import './chat.css';
+import './chatbox.css';
 import Message from '../../components/Message/message';
-import ProfileTextField from '../../components/ProfileTextField'
+//import ProfileTextField from '../../components/ProfileTextField'
 const Chat = ()=>{
     return(
         <>
@@ -35,15 +35,10 @@ const Chat = ()=>{
 
                 </div>
                 <div className='chatBoxBottom'>
-                  <ProfileTextField />
+                  <textarea className='chatMessageInput' />
                   <Button variant='contained'>Send</Button>
 
                 </div>
-            </div>
-           </div>
-           <div className='chatOnline'>
-           <div className='chatOnlineWrapper'>
-                Online
             </div>
            </div>
         </div>

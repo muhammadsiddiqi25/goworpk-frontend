@@ -1,11 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import TextField from '@mui/material/TextField';
 import { Button } from '@mui/material';
 import Consversations from '../../components/Conversations/Conversations';
 import './chatbox.css';
 import Message from '../../components/Message/message';
+import axios from 'axios';
 //import ProfileTextField from '../../components/ProfileTextField'
 const Chat = ()=>{
+    const [conversations, setConvesations] = useState([]);
+    /*useEffect(()=>{
+        const getConversation = async ()=>{
+            try {
+                //const res = await axios.get('/conversations'+user._id);
+                console.log(res);
+                setConvesations(res.data);
+            } catch (error) {
+                console.log(error) ;
+            }
+        }
+        getConversation();
+    }, //[user._id]);
+    */
+
     return(
         <>
         <div className='messenger'>

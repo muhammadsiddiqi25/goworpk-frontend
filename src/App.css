@@ -74,12 +74,15 @@ nav{
   color:white;
 }
 
+/*
+Specify it for that particular component where you want this stylen. It is creating some choas in some other components.
 .content{
   display: flex;
   align-items: center;
   width: 100%;
   height: auto;
 }
+*/
 
 
 .auth-form-div{

@@ -54,9 +54,6 @@ function App() {
   
  }
   useEffect(() => {
-    console.log("By Muhammad")
-  console.log("yeh mera area hai!");
-  console.log("yeh mera area hai!");
    const accessToken = localStorage.getItem('accessToken')
    const refreshToken = localStorage.getItem('refreshToken')
    if(accessToken){
@@ -85,6 +82,7 @@ function App() {
               <Route exact path='/login' element={<Login />} />
               <Route exact path='/signup' element={<Signup />} />
               <Route exact path='/about' element={<About />} />
+              <Route exact path='/chat' element={<Chat />} />
             </Route>
             <Route path='/' element={<PrivateRoutes />} >
               <Route path='/' element={<CandidateRoutes />}>
@@ -94,7 +92,7 @@ function App() {
                 <Route exact path='/candidate/certifications' element={<NothingShow />} />
                 <Route exact path='/candidate/offers' element={<NothingShow />} />
                 <Route exact path='/candidate/offers/:id' element={<NothingShow />} />
-                <Route exact path='/candidate/messages' element={<NothingShow />} />
+                {/* <Route exact path='/candidate/messages' element={<NothingShow />} /> */}
                 <Route exact path='/candidate/profile' element={<CandidateProfilePicture />} />
                 <Route exact path='/candidate/personal-info' element={<PersonalInfo />} />
                 <Route exact path='/candidate/education-info' element={<EducationInfo />} />
@@ -103,8 +101,9 @@ function App() {
                 <Route exact path='/candidate/skills-info' element={<CandidateSkills />} />
                 <Route exact path='/candidate/about' element={<CandidateAbout />} />
                 <Route exact path='/candidate/cv-builder' element={<Cv_Builder />} />
-                <Route exact path='/candidate/cv-builder' element={<Chat />} />
+                <Route exact path='/candidate/messages' element={<Chat />} />
                 
+
 
               </Route>
               <Route path='/' element={<EmployerRoutes />}>

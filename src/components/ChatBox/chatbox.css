@@ -1,18 +1,18 @@
 .messenger{
     height: calc(100vh - 90px);
     display: flex;
+
+
 }
 .chatMenu{
-    flex: 3.5;
+    flex: 5;
 }
 .chatBox{
-    flex: 5.5;
-}
-.chatOnline{
-    flex: 3;
+    flex: 7;
 }
 
-.chatMenuWrapper, .chatBoxWrapper, .chatOnlineWrapper {
+
+.chatMenuWrapper, .chatBoxWrapper {
     padding: 10px;
     height: 100%;
 }
@@ -23,6 +23,7 @@
     justify-content: space-between;
 }
 .chatBoxTop{
+    width: 80%;
     height: 100%;
     overflow-y: scroll;
 }

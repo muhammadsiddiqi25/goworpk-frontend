@@ -41,6 +41,7 @@ import EmployerProfile from './containers/Employer/EmployerProfile';
 import Logout from './containers/Logout';
 import CandidateSearch from './containers/Employer/CandidateSearch';
 import ViewCandidates from './containers/Employer/ViewCandidates';
+import SendOffer from './containers/Employer/SendOffer';
 
 function App() {
   const dispatch = useDispatch()
@@ -114,6 +115,7 @@ function App() {
                 <Route exact path = '/employer/profile' element = {<EmployerProfile />} />
                 <Route exact path = '/employer/candidates' element = {<CandidateSearch />} />
                 <Route exact path = '/employer/candidates/view/:user_id' element = {<ViewCandidates />} />
+                <Route exact path = '/employer/candidates/sendoffer' element = {<SendOffer />} />
               </Route>
               <Route exact path='/verification/:id/:key' element={<Verify />} />
             </Route>

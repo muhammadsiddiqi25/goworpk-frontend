@@ -9,7 +9,7 @@ const initial_state = {
     profile_info: '',
     candidate_error:false,
     candidates:[],
-    selected_candidates:localStorage.getItem('selected_candidates')?localStorage.getItem('selected_candidates'):[]
+    selected_candidates:localStorage.getItem('selected_candidates')?JSON.parse(localStorage.getItem('selected_candidates')):[]
 }
 
 export const employerReducer = (state = initial_state, action) => {

@@ -74,7 +74,7 @@ const Login = () => {
         <div>
         <Link to='/'>Forgot Password?</Link>
         </div>
-      <SmallButton type='submit' variant="contained" disabled = {isSubmitting} sx={{margin:'40px auto auto auto'}}>Login</SmallButton>
+      <SmallButton type='submit' variant="contained" sx={{margin:'40px auto auto auto'}}>Login</SmallButton>
       </form>
       <p>Already have an account? <Link to = '/signup'>Signup</Link></p>
     </div>

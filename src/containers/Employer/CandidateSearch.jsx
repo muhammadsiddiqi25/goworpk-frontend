@@ -11,8 +11,6 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useNavigate } from 'react-router-dom';
-import { setLocale } from 'yup';
-// import { candidates } from './dummdata';
 
 
 function NewTextField(props) {
@@ -92,6 +90,8 @@ const CandidateSearch = () => {
     }, [title, gender, location, education])
 
     const selected_candidates = useSelector((state) => state.employerReducer.selected_candidates)
+    console.log('llll',selected_candidates.length)
+    console.log(selected_candidates)
     return (
         <div className='search-container'>
             <NewTextField placeholder='Who you are looking for e.g. Electrical Engineer'
@@ -141,6 +141,7 @@ const CandidateSearch = () => {
                 </FormControl>
                 {/* <SmallButton variant='contained'>Clear</SmallButton> */}
                 <Button variant='outlined'
+                color = 'error'
                     onClick={() => {
                         setTitle('')
                         setEducation('')
@@ -247,7 +248,11 @@ const CandidateSearch = () => {
 
                 <SmallButton
                     variant='contained'
+                    onClick = {()=>{
+                        navigate('/employer/candidates/sendoffer')
+                    }}
                 >
+                    
                     Send Offer
                 </SmallButton>
                 </div>

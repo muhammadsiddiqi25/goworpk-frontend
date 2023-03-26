@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import '../../assets/styles/CandidateSearchProfile.css'
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { get_candidates_details } from '../../api/api';
 import Typography from '@mui/material/Typography'
 import moment from 'moment'
@@ -12,6 +12,7 @@ import { useSelector } from 'react-redux';
 const ViewCandidates = () => {
     const params = useParams()
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [user, setUser] = useState('')
     const [error, setError] = useState(false)
     useEffect(() => {

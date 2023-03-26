@@ -110,20 +110,20 @@ const authReducer = (state = initial, action) => {
         window.location.replace(`${action.resp.data.user.role}/dashboard`)
       }
       else window.location.replace(`${user.role}/verification`)
-      return {
+      state = {
         ...state, loading: false,
         success: "Login Successfull!",
         user: action.resp.data.user,
         accessToken: action.resp.data.accessToken,
         refreshToken: action.resp.data.refreshToken,
       }
-
+      break;
     case LOGIN_ERROR:
       toast.dismiss();
       toastId = toast.error(action.err.response.data.message)
-      return { ...state, error: action.err.response.data.message };
-
-    
+      state =  { ...state, error: action.err.response.data.message };
+      break;
+      
     case OTP_REQUEST:
       toast.dismiss()
       console.log('otp')
@@ -183,6 +183,7 @@ const authReducer = (state = initial, action) => {
       default:
       return state;
   }
+  return state;
 };
 
 export default authReducer;

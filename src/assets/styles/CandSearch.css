@@ -1,0 +1,30 @@
+
+.search-filter-inputs{
+    display: flex;
+    justify-content: flex-start;
+    gap:40px;
+}
+
+
+.search-container{
+    margin:40px 200px;
+}
+
+.cand-table{
+    width:100%;
+    text-align: center;
+    margin:50px auto;
+}
+
+.cand-table tbody tr:nth-child(odd){
+    background-color: #f5f5f5;
+}
+
+
+.cand-table tbody tr, .cand-table thead{
+    line-height: 70px;
+}
+
+.cand-table tbody tr td:first-child{
+    max-width: fit-content;
+}

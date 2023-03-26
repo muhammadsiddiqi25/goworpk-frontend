@@ -38,6 +38,9 @@ import { useDispatch } from 'react-redux';
 import { getTokens } from './redux/auth/action';
 import NothingShow from './components/NothingShow';
 import EmployerProfile from './containers/Employer/EmployerProfile';
+import Logout from './containers/Logout';
+import CandidateSearch from './containers/Employer/CandidateSearch';
+import ViewCandidates from './containers/Employer/ViewCandidates';
 
 function App() {
   const dispatch = useDispatch()
@@ -75,6 +78,7 @@ function App() {
         <BrowserRouter>
           {localStorage.getItem('accessToken') ? <Navbar2 /> : null}
           <Routes>
+          <Route exact path='/logout' element={<Logout />} />
             <Route path='/' element={<GeneralRoutes />} >
               <Route exact path='/' element={<Home />} />
               <Route exact path='/login' element={<Login />} />
@@ -99,6 +103,7 @@ function App() {
                 <Route exact path='/candidate/about' element={<CandidateAbout />} />
                 <Route exact path='/candidate/cv-builder' element={<Cv_Builder />} />
                 <Route exact path='/candidate/cv-builder' element={<Chat />} />
+                
 
               </Route>
               <Route path='/' element={<EmployerRoutes />}>
@@ -107,6 +112,8 @@ function App() {
                 <Route path='/employer/packages' element={<Packages />} />
                 <Route path='/employer/packages/freetrial' element={<FreeTrial />} />
                 <Route exact path = '/employer/profile' element = {<EmployerProfile />} />
+                <Route exact path = '/employer/candidates' element = {<CandidateSearch />} />
+                <Route exact path = '/employer/candidates/view/:user_id' element = {<ViewCandidates />} />
               </Route>
               <Route exact path='/verification/:id/:key' element={<Verify />} />
             </Route>

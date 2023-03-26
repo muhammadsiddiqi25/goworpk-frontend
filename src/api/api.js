@@ -296,10 +296,52 @@ export const send_candidate_view_offer_data= ()=>{
     let config = {
         headers:{
             'Content-type': 'application/json'
+            
         }
     }
     let res =axios.get(`${HOST_API}/get-candidate-view-offer-data`, config);
     return res;
 }
 
+export const logout= ()=>{
+    let config = {
+        headers:{
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+        }
+    }
+    const body = JSON.stringify({refreshToken:localStorage.getItem('refreshToken')})
+    let res =axios.post(`${HOST_API}/logout`,body, config);
+    return res;
+}
+
+
+export const get_candidates_request= ()=>{
+    let config = {
+        headers:{
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+        }
+    }
+    let res =axios.get(`${HOST_API}/emp/get-candidates`, config);
+    return res;
+}
+
+
+export const get_candidates_details= async (user_id)=>{
+    let config = {
+        headers:{
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+        }
+    }
+    const body = JSON.stringify({user_id:user_id})
+    try{
+        let res =await axios.post(`${HOST_API}/emp/get-candidates-details`,body, config);
+        return res;
+    }
+    catch(e){
+        return e
+    }
+}
 

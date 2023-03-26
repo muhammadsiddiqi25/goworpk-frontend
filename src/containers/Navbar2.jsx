@@ -75,7 +75,7 @@ const Navbar2 = () => {
             onClick={toggleDrawer(false)}
             onKeyDown={toggleDrawer(false)}
         >
-            <Typography variant="h5">Muhammad Siddiqi</Typography>
+            <Typography variant="h5" sx={{textAlign:'center'}}>GoWork</Typography>
             <List sx={{ color: 'black' }}>
                 {sidebarMainItems.map((item, index) => (
                     <ListItem key={index} disablePadding>
@@ -95,7 +95,7 @@ const Navbar2 = () => {
                         <ListItemButton
                         onClick = {()=>{
                             if(item.text == 'Logout'){
-                                console.log('logout called')
+                                navigate('/logout')
                             }
                         }}
                         >
@@ -207,7 +207,7 @@ const Navbar2 = () => {
                 <NotificationsNoneOutlinedIcon />
                 </IconButton>
                 
-                <Avatar alt={username} src={`http://44.201.53.100/:5001/profile_pics/${aud}.png`} onClick={toggleDrawer('right', true)} />
+                <Avatar alt={username} src={`http://localhost:5001/profile_pics/${aud}.png`} onClick={toggleDrawer('right', true)} />
                 <Drawer
                     anchor={'right'}
                     open={state['right']}

@@ -1,0 +1,93 @@
+
+
+.candidate-search-profile-container{
+    margin:80px 150px;
+}
+
+.candidate-search-profile-header{
+    padding:30px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.candidate-search-profile-header img{
+    width:200px;
+    height: 200px;
+}
+
+.candidate-search-profile-header div{
+    display: flex;
+    flex-direction: column;
+    margin:10px 50px;
+}
+
+.candidate-search-profile-header div h1{
+    font-size: 50px;
+    text-transform: uppercase;
+}
+.candidate-search-profile-header div h3{
+    color:#05DD41;
+}
+
+.candidate-search-profile-header div p{
+    line-height: 2;
+}
+
+.header-paragraph{
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+
+.key{
+    font-weight: bold;
+    
+}
+
+.candidate-search-profile-education{
+    margin:30px auto;
+    padding:30px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+
+.candidate-search-profile-education table{
+    width:100%;
+    text-align: center;
+}
+
+.candidate-search-profile-education table tr td{
+    padding:20px 10px;
+}
+.candidate-search-profile-education table tr:nth-child(even){
+    background-color: white;
+    border-radius: 20px;
+}
+
+table{
+    border-spacing: 0;
+}
+
+.candidate-search-profile-education h1{
+    text-align: center;
+    margin:10px auto 30px auto;
+}
+
+.rating-div{
+    width:50%;
+    height: 10px;
+    background-color: #05DD41;
+}
+
+.rating{
+    position: relative;
+    height: 10px;
+    top: 0;
+    left: 0;
+    background-color: green;
+    
+}

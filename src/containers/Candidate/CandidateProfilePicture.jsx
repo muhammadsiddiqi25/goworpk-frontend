@@ -43,7 +43,7 @@ const Profile = () => {
     <div className='profileForm'>
       <Typography variant='h4' fontWeight={900}>Step 1/6: Profile Picture</Typography>
       <div className='profile-image'>
-        <img src={cropData ? cropData : (`http://44.201.53.100//profile_pics/${aud}.png`)}
+        <img src={cropData ? cropData : (`http://127.0.0.1:5001//profile_pics/${aud}.png`)}
           onClick={() => { hiddenFileInput.current.click(); }}
         /> 
         <input type="file"
@@ -60,12 +60,17 @@ const Profile = () => {
             } else if (e.target) {
               files = e.target.files;
             }
-            const reader = new FileReader();
+            if(files[0].size > 2 * 1024 *1024){
+              alert('Image size should not exceed 2 MB.')
+            }
+            else{
+              const reader = new FileReader();
             reader.onload = () => {
               setProfileImage(reader.result);
             };
             reader.readAsDataURL(files[0]);
             setOpen(true)
+            }
           }}
           ref={hiddenFileInput}
           style={{ display: 'none' }}

@@ -25,10 +25,7 @@ export const CandidateRoutes  = ()  =>{
     var role = ''
     if(token){
         role = jwtDecode(token).role
-        console.log(role)
     }
-    console.log(Boolean(token) && Boolean(role))
-    console.log(role == 'candidate')
     return (
         Boolean(token) && role === 'candidate' ? <Outlet /> : <Navigate to='/login' />      
     ) 

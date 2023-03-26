@@ -1,6 +1,6 @@
 import {
     CERTIFICATE_DATA_REQUEST,
-     CV_BUILDER_REQUEST, VIEW_OFFER_REQUEST
+     CV_BUILDER_REQUEST, LOGOUT_REQUEST, VIEW_OFFER_REQUEST
 } from './types'
 
 
@@ -14,4 +14,9 @@ export const getCvBuilderData=()=>{
 
 export const getViewOfferData=()=>{
     return {type: VIEW_OFFER_REQUEST}
+}
+
+
+export const logout  = ()=>{
+    return {type:LOGOUT_REQUEST}
 }

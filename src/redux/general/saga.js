@@ -1,11 +1,15 @@
 import { takeLatest, call,put } from "redux-saga/effects";
-import { send_candidate_certification_data, send_candidate_cv_builder_data, send_candidate_view_offer_data } from "../../api/api";
-import { CERTIFICATE_DATA_FAILED, CERTIFICATE_DATA_REQUEST, CERTIFICATE_DATA_SUCCESS, CV_BUILDER_FAILED, CV_BUILDER_REQUEST, CV_BUILDER_SUCCESS, VIEW_OFFER_FAILED, VIEW_OFFER_REQUEST, VIEW_OFFER_SUCCESS } from "./types";
+import { send_candidate_certification_data, send_candidate_cv_builder_data, send_candidate_view_offer_data,logout } from "../../api/api";
+import { CERTIFICATE_DATA_FAILED, CERTIFICATE_DATA_REQUEST, CERTIFICATE_DATA_SUCCESS, 
+    CV_BUILDER_FAILED, CV_BUILDER_REQUEST, CV_BUILDER_SUCCESS, 
+    LOGOUT_REQUEST,LOGOUT_FAILED, LOGOUT_SUCCESS, 
+    VIEW_OFFER_FAILED, VIEW_OFFER_REQUEST, VIEW_OFFER_SUCCESS } from "./types";
 
 function* generalSaga(){
     yield takeLatest(CERTIFICATE_DATA_REQUEST, get_candidate_certification_data);
     yield takeLatest(CV_BUILDER_REQUEST, get_candidate_cv_builder_data); 
     yield takeLatest(VIEW_OFFER_REQUEST, get_candidate_view_offer_data)
+    yield takeLatest(LOGOUT_REQUEST,logout_request)
 }
 
 function* get_candidate_certification_data() {
@@ -40,6 +44,18 @@ function* get_candidate_view_offer_data(){
     }catch(err){
         console.log("Error in View Offer: ", err);
         yield put({type: VIEW_OFFER_FAILED, err})
+    }
+}
+
+
+function* logout_request(){
+    try{
+        const resp = yield call(()=>logout())
+        yield put({type:LOGOUT_SUCCESS})
+    }
+    catch(err){
+        console.log(err)
+        yield put({type: LOGOUT_FAILED,err})
     }
 }
 

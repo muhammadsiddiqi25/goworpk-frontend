@@ -1,5 +1,5 @@
 import * as types from './types'
-
+import toast from "react-hot-toast";
 const intitial_state = {
     theme: 'dark',
     loading: true,
@@ -9,6 +9,7 @@ const intitial_state = {
 
 
 export const generalReducer = (state = intitial_state, action) => {
+    let toastId = null
     switch (action.type) {
         case types.LOADING_TRUE:
             return { ...state, loading: true }
@@ -34,6 +35,20 @@ export const generalReducer = (state = intitial_state, action) => {
             return { ...state, data: action.res.data }
         case types.VIEW_OFFER_FAILED:
             return { ...state, error: action.err.response.data.message }
+        
+        case types.LOGOUT_FAILED:
+            toastId = toast.error('Logout Failed!')
+            return state;
+        case types.LOGOUT_REQUEST:
+            return {...state}
+        
+        case types.LOGOUT_SUCCESS:
+            localStorage.removeItem('accessToken')
+            localStorage.removeItem('refreshToken')
+            localStorage.removeItem('user')
+            toastId = toast.success('Logout Successful!')
+            window.location.replace('/login')
+            return {...state}
         default:
             return state;
     }

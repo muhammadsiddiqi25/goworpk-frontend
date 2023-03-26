@@ -1,4 +1,4 @@
-import { GET_PROFILE_DATA_REQUESET, SAVE_PROFILE_DATA_REQUESET } from "./types"
+import { GET_CANDIDATES_REQUESET, GET_PROFILE_DATA_REQUESET, REMOVE_CANDIDATES, SAVE_PROFILE_DATA_REQUESET, SELECT_CANDIDATES } from "./types"
 
 
 export const save_employer_profile = (query)=>{
@@ -9,3 +9,18 @@ export const save_employer_profile = (query)=>{
 export const get_employer_profile = ()=>{
     return {type:GET_PROFILE_DATA_REQUESET}
 }
+
+
+export const get_candidates = ()=>{
+    return {type:GET_CANDIDATES_REQUESET}
+}
+
+
+export const select_candidate = (user_id)=>{
+    return {type:SELECT_CANDIDATES,user_id}
+}
+
+export const remove_candidate = (user_id) => {
+    return {type:REMOVE_CANDIDATES,user_id}
+}   
+

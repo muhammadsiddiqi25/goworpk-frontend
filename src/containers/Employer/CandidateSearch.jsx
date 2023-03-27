@@ -27,6 +27,7 @@ function NewTextField(props) {
 const CandidateSearch = () => {
     const dispatch = useDispatch()
     const navigate = useNavigate()
+    const [error,setError] = useState(false)
     const [filteredCandidates, setFilteredCandidates] = useState([])
     useEffect(() => {
         dispatch(get_candidates())
@@ -182,23 +183,6 @@ const CandidateSearch = () => {
                     >
                         {candidates ?
                             filteredCandidates
-                                // .filter((val) => {
-                                //         if(val.title
-                                //             .toLocaleLowerCase()
-                                //             .includes(title.toLocaleLowerCase())
-                                //             &&
-                                //             val.location
-                                //             .toLocaleLowerCase()
-                                //             .includes(location.toLocaleLowerCase())
-                                //             &&
-                                //             val.gender
-                                //             .toLocaleLowerCase().includes(gender.toLowerCase())
-                                //             &&
-                                //             val.education_level
-                                //             .toLocaleLowerCase().includes(education.toLowerCase())
-                                //             )return val;
-
-                                // })
                                 .slice(start, end).map((candidate, index) => (
                                     <tr key={index}>
                                         <td><Avatar alt={candidate.name} src={`http://localhost:5001/profile_pics/${candidate.user_id}.png`} /></td>
@@ -216,6 +200,7 @@ const CandidateSearch = () => {
                                         ><SmallButton variant='contained'
                                             color={selected_candidates.includes(candidate.user_id) ? 'error' : 'primary'}
                                             onClick={() => {
+                                                setError(false)
                                                 if (selected_candidates.includes(candidate.user_id)) {
                                                     dispatch(remove_candidate(candidate.user_id))
                                                 }
@@ -245,11 +230,16 @@ const CandidateSearch = () => {
                     <Pagination count={Math.ceil(filteredCandidates.length / 15)}
                         onChange={handleChange} /> : null
                 }
-
+                {error?<p style={{color:'red',textAlign:'center'}}>Please Select at least one candidate!</p>:null}
                 <SmallButton
                     variant='contained'
                     onClick = {()=>{
+                       if(selected_candidates.length <=0){
+                        setError(true)
+                       }
+                       else{
                         navigate('/employer/candidates/sendoffer')
+                       }
                     }}
                 >
                     

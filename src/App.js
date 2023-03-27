@@ -115,6 +115,7 @@ function App() {
                 <Route exact path = '/employer/candidates' element = {<CandidateSearch />} />
                 <Route exact path = '/employer/candidates/view/:user_id' element = {<ViewCandidates />} />
                 <Route exact path = '/employer/candidates/sendoffer' element = {<SendOffer />} />
+                <Route exact path='/employer/messages' element={<Chat />} />
               </Route>
               <Route exact path='/verification/:id/:key' element={<Verify />} />
             </Route>

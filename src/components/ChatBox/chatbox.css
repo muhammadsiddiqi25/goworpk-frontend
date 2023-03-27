@@ -11,16 +11,22 @@
     flex: 7;
 }
 
-
-.chatMenuWrapper, .chatBoxWrapper {
+.chatBoxWrapper {
     padding: 10px;
     height: 100%;
 }
+.chatMenuWrapper{
+    width:350px;
+    border-right: 1px solid rgb(214, 214, 214);
+    height: 100%;
+}
+
 
 .chatBoxWrapper {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    
 }
 .chatBoxTop{
     width: 80%;
@@ -37,4 +43,24 @@
     width: 80%;
     height: 90px;
     padding: 0.56rem;
+}
+
+.chatbox-sidenames{
+    display: flex;
+    justify-content: flex-start;
+    padding:10px 40px;
+    align-items: center;
+    border-bottom: 1px solid rgb(224, 222, 222);
+    margin:10px 0px;
+    gap:30px
+}
+
+.chatbox-sidenames:hover{
+    background-color: rgb(248, 248, 248);
+    cursor: pointer;
+}
+
+.chatbox-sidenames h1{
+    text-transform: lowercase;
+    text-transform: capitalize;
 }

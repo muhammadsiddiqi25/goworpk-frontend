@@ -345,3 +345,33 @@ export const get_candidates_details= async (user_id)=>{
     }
 }
 
+
+export const send_offer= async (data)=>{
+    let config = {
+        headers:{
+            'Content-type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+        }
+    }
+    const body = JSON.stringify(data)
+    try{
+        let res =await axios.post(`${HOST_API}/emp/send-offer`,body, config);
+        return res;
+    }
+    catch(e){
+        return e
+    }
+}
+
+
+
+export const get_admin_Dashboard_Data = () => {
+    let config = {
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
+        }
+    }
+    let res = axios.get(`${HOST_API}/admin/dashboard-data`, config)
+    return res
+}

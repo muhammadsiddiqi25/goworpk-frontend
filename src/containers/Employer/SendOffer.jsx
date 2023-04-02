@@ -93,7 +93,7 @@ const SendOffer = () => {
                 <SmallButton
                     variant='contained'
                     onClick = {()=>{
-                        // navigate('/employer/candidates/sendoffer')
+                        navigate('/employer/candidates/sendoffer/send-offer-form')
                     }}
                 >
                     

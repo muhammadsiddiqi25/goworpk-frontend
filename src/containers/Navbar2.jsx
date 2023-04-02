@@ -141,7 +141,7 @@ const Navbar2 = () => {
             link: '/employer/candidates'
         },
         {
-            text: 'Messages',
+            text: 'Employers',
             link: '/employer/messages'
         },
         {
@@ -152,6 +152,33 @@ const Navbar2 = () => {
             text: 'Packages',
             link: '/employer/packages'
         },
+        
+    ]
+    const adminItems = [
+        {
+            text: 'Dashboard',
+            link: '/admin/dashboard'
+        },
+        {
+            text: 'Candidates',
+            link: '/admin/candidates'
+        },
+        {
+            text: 'Employers',
+            link: '/admin/employers'
+        },
+        {
+            text: 'Blogs',
+            link: '/admin/blogs'
+        },
+        {
+            text: 'Payments',
+            link: '/admin/packages'
+        },
+        {
+            text:'Support',
+            link:'/admin/support'
+        }
     ]
 
     const toggleDrawer = (anchor, open) => (event) => {
@@ -170,6 +197,9 @@ const Navbar2 = () => {
         }
         else if(role == 'employer'){
             setNavItems(empItems)
+        }
+        else if(role == 'admin'){
+            setNavItems(adminItems)
         }
         setActive( window.location.pathname.split('/')[2])
      },[]);

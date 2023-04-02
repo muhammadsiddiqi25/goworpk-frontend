@@ -31,6 +31,18 @@ export const CandidateRoutes  = ()  =>{
     ) 
 }
 
+export const AdminRoutes  = ()  =>{
+    const token = localStorage.getItem('accessToken')
+    var role = ''
+    if(token){
+        role = jwtDecode(token).role
+    }
+    return (
+        Boolean(token) && role === 'admin' ? <Outlet /> : <Navigate to='/login' />      
+    ) 
+}
+
+
 
 
 

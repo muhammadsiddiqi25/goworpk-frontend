@@ -2,8 +2,9 @@ import toast from "react-hot-toast";
 import jwtDecode from 'jwt-decode'
 import {
     SAVE_PROFILE_DATA_ERROR, SAVE_PROFILE_DATA_REQUESET, SAVE_PROFILE_DATA_SUCCESS,
-    GET_PROFILE_DATA_ERROR, GET_PROFILE_DATA_REQUESET, GET_PROFILE_DATA_SUCCESS, GET_CANDIDATES_REQUESET, GET_CANDIDATES_SUCCESS, GET_CANDIDATES_ERROR, SELECT_CANDIDATES, REMOVE_CANDIDATES,
+    GET_PROFILE_DATA_ERROR, GET_PROFILE_DATA_REQUESET, GET_PROFILE_DATA_SUCCESS, GET_CANDIDATES_REQUESET, GET_CANDIDATES_SUCCESS, GET_CANDIDATES_ERROR, SELECT_CANDIDATES, REMOVE_CANDIDATES, SEND_OFFER_REQUESET, SEND_OFFER_ERROR, SEND_OFFER_SUCCESS,
 } from "./types";
+import { SEND_ABOUT_INFO_ERROR } from "../CandidateProfile/types";
 
 const initial_state = {
     profile_info: '',
@@ -58,6 +59,18 @@ export const employerReducer = (state = initial_state, action) => {
             localStorage.setItem('selected_candidates',JSON.stringify(new_array))
             return {...state, selected_candidates:new_array}
 
+
+        case SEND_OFFER_REQUESET:
+            toastId = toast.success('Request sent...')
+            return {...state}
+        case SEND_OFFER_SUCCESS:
+            toastId = toast.success('Offers Sent Sucessfuly!')
+            // localStorage.removeItem('selected_candidates')
+            return {...state}
+
+        case SEND_OFFER_ERROR:
+            toastId = toast.success('Error in sending offers!')
+            return {...state}
         case GET_PROFILE_DATA_ERROR:
         case GET_PROFILE_DATA_REQUESET:
         case GET_CANDIDATES_REQUESET:

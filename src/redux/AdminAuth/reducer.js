@@ -8,7 +8,8 @@ import {
   import toast from "react-hot-toast";
   import jwtDecode from 'jwt-decode'
   const initial = {
-    token: localStorage.getItem('accessToken') ? localStorage.getItem('accessToken') : null,
+    accessToken: localStorage.getItem('accessToken') ? localStorage.getItem('accessToken') : null,
+    refreshToken: localStorage.getItem('refreshToken') ? localStorage.getItem('refreshToken') : null,
     isAuthenticated: false,
     loading: false,
     user: localStorage.getItem('user') ? localStorage.getItem('user') : null,
@@ -81,26 +82,30 @@ import {
       case ADMIN_LOGIN_REQUEST:
         toast.dismiss()
         toastId = toast.loading("Please Wait...")
-        return { ...state, loading: true }
+        break;
   
       case ADMIN_LOGIN_SUCCESS:
-        console.log(action.resp)
+        console.log('data',action.resp.data)
         localStorage.setItem('user', action.resp.data.user)
-        localStorage.setItem('accessToken', action.resp.data.token)
+        localStorage.setItem('accessToken', action.resp.data.accessToken)
+        localStorage.setItem('refreshToken', action.resp.data.refreshToken)
         toast.dismiss();
         toastId = toast.success('Login Successfull!')
           window.location.replace(`/admin/dashboard`)
-        return {
+        state =  {
           ...state, loading: false,
-          success: "Admi Login Successfull!",
+          success: "Admin Login Successfull!",
           user: action.resp.data.user,
-          token: action.resp.data.token
+          accessToken: action.resp.data.accessToken,
+          refreshToken:action.resp.data.refreshToken
         }
+        break;
   
       case ADMIN_LOGIN_ERROR:
         toast.dismiss();
         toastId = toast.error(action.err.response.data.message)
-        return { ...state, error: action.err.response.data.message };
+        state =  { ...state, error: action.err.response.data.message };
+        break;
   
       
     //   case OTP_REQUEST:
@@ -118,8 +123,9 @@ import {
     //     return state
       
         default:
-        return state;
+        break;
     }
+    return state
   };
   
   export default authAdminReducer;

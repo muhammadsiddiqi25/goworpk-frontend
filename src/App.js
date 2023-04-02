@@ -5,7 +5,12 @@ import { ThemeProvider } from '@emotion/react';
 import theme from './theme';
 
 import './App.css';
-import Navbar from './containers/Navbar';
+import jwtDecode from 'jwt-decode';
+import { useDispatch } from 'react-redux';
+import { getTokens } from './redux/auth/action';
+
+
+
 import Login from './containers/Login';
 import Home from './containers/Home';
 import GeneralRoutes from './PrivateRoutes/GeneralRoutes';
@@ -13,7 +18,7 @@ import Signup from './containers/Signup';
 import Verification from './containers/Verification';
 import Navbar2 from './containers/Navbar2';
 // import Dashboard from './containers/Candidate/Dashboard';
-import PrivateRoutes, { CandidateRoutes, EmployerRoutes } from './PrivateRoutes/RestrictedRoutes';
+import PrivateRoutes, { CandidateRoutes, EmployerRoutes,AdminRoutes } from './PrivateRoutes/RestrictedRoutes';
 import Packages from './containers/Employer/Packages';
 import FreeTrial from './containers/Employer/FreeTrial';
 import Certificates from './containers/Candidate/Certificates';
@@ -32,16 +37,18 @@ import CandidateSkills from './containers/Candidate/CandidateSkills';
 import CandidateAbout from './containers/Candidate/CandidateAbout';
 import CadidateDashboard from './containers/Candidate/CadidateDashboard';
 import Chat from './components/ChatBox/Chatbox';
-
-import jwtDecode from 'jwt-decode';
-import { useDispatch } from 'react-redux';
-import { getTokens } from './redux/auth/action';
 import NothingShow from './components/NothingShow';
 import EmployerProfile from './containers/Employer/EmployerProfile';
 import Logout from './containers/Logout';
 import CandidateSearch from './containers/Employer/CandidateSearch';
 import ViewCandidates from './containers/Employer/ViewCandidates';
 import SendOffer from './containers/Employer/SendOffer';
+import AdminLogin from './containers/Admin/AdminLogin';
+import SendOfferForm from './containers/Employer/SendOfferForm';
+import AdminDashboard from './containers/Admin/AdminDashboard';
+
+
+
 
 function App() {
   const dispatch = useDispatch()
@@ -83,6 +90,7 @@ function App() {
               <Route exact path='/signup' element={<Signup />} />
               <Route exact path='/about' element={<About />} />
               <Route exact path='/chat' element={<Chat />} />
+              <Route exact path = '/admin/login' element = {<AdminLogin />} />
             </Route>
             <Route path='/' element={<PrivateRoutes />} >
               <Route path='/' element={<CandidateRoutes />}>
@@ -102,9 +110,6 @@ function App() {
                 <Route exact path='/candidate/about' element={<CandidateAbout />} />
                 <Route exact path='/candidate/cv-builder' element={<Cv_Builder />} />
                 <Route exact path='/candidate/messages' element={<Chat />} />
-                
-
-
               </Route>
               <Route path='/' element={<EmployerRoutes />}>
                 <Route path='/employer/verification' element={<Verification />} />
@@ -115,7 +120,11 @@ function App() {
                 <Route exact path = '/employer/candidates' element = {<CandidateSearch />} />
                 <Route exact path = '/employer/candidates/view/:user_id' element = {<ViewCandidates />} />
                 <Route exact path = '/employer/candidates/sendoffer' element = {<SendOffer />} />
+                <Route exact path = '/employer/candidates/sendoffer/send-offer-form' element = {<SendOfferForm />} />
                 <Route exact path='/employer/messages' element={<Chat />} />
+              </Route>
+              <Route path='/' element={<AdminRoutes />}>
+              <Route path='/admin/dashboard' element={<AdminDashboard />} />
               </Route>
               <Route exact path='/verification/:id/:key' element={<Verify />} />
             </Route>
